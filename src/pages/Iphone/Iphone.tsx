@@ -1,7 +1,8 @@
 import React, { useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { Navbar } from '../../components/Navbar';
 import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
-import { ShoppingBag, Menu, Search, Shield, Cpu, Orbit, Camera, Focus, Target, ChevronRight } from 'lucide-react';
+import { Shield, Cpu, Orbit, Camera, Focus, Target, ChevronRight } from 'lucide-react';
 
 const IPHONE_PRODUCTS = [
   {
@@ -46,39 +47,7 @@ const IPHONE_PRODUCTS = [
   }
 ];
 
-const Navbar = () => (
-  <nav className="absolute top-0 left-0 right-0 z-50 px-8 py-4 flex items-center justify-between text-white text-xs">
-    <div className="flex items-center gap-8 w-full">
-      <div className="flex items-center gap-4 cursor-pointer group">
-        <img
-          src="/images/apple.svg"
-          alt="Apple"
-          className="w-4 h-4 opacity-80 group-hover:opacity-100 transition-opacity"
-        />
-        <span className="text-white/30 font-light text-xs group-hover:text-white/60 transition-colors">|</span>
-        <span className="text-white/70 font-semibold tracking-widest text-[11px] uppercase group-hover:text-white transition-colors">Chai's Studio</span>
-      </div>
-      <div className="hidden md:flex flex-1 justify-center gap-8 font-medium tracking-wide opacity-80">
-        <a href="#" className="hover:opacity-100 transition-opacity">Store</a>
-        <a href="#" className="hover:opacity-100 transition-opacity">Mac</a>
-        <a href="#" className="hover:opacity-100 transition-opacity">iPad</a>
-        <Link to="/iphone" className="hover:opacity-100 transition-opacity text-white drop-shadow-md">iPhone</Link>
-        <a href="#" className="hover:opacity-100 transition-opacity">Watch</a>
-        <a href="#" className="hover:opacity-100 transition-opacity">Vision</a>
-        <Link to="/" className="hover:opacity-100 transition-opacity">AirPods</Link>
-        <a href="#" className="hover:opacity-100 transition-opacity">TV & Home</a>
-        <a href="#" className="hover:opacity-100 transition-opacity">Entertainment</a>
-        <a href="#" className="hover:opacity-100 transition-opacity">Accessories</a>
-        <a href="#" className="hover:opacity-100 transition-opacity">Support</a>
-      </div>
-    </div>
-    <div className="flex items-center gap-6 ml-8">
-      <Search className="w-4 h-4 cursor-pointer opacity-80 hover:opacity-100" />
-      <ShoppingBag className="w-4 h-4 cursor-pointer opacity-80 hover:opacity-100" />
-      <Menu className="w-4 h-4 cursor-pointer md:hidden opacity-80 hover:opacity-100" />
-    </div>
-  </nav>
-);
+
 
 const TitaniumSection = () => {
   const ref = useRef(null);
@@ -264,7 +233,7 @@ const Iphone: React.FC = () => {
   return (
     <div className="w-full font-sans select-none bg-white text-zinc-900 min-h-screen">
       <div className="relative h-screen w-full overflow-hidden bg-white">
-        <Navbar />
+        <Navbar theme="dark" activePage="iphone" />
 
         {/* Main Showcase Panels */}
         <div className="flex h-full w-full">

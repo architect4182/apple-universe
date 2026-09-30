@@ -1,7 +1,8 @@
 import React, { useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
+import { Navbar } from '../../components/Navbar';
 import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion';
-import { ShoppingBag, ChevronRight, Menu, Search, Headphones, Battery, Bluetooth, Mic, Zap, Layers, Feather, Wind, CircleDot, Smartphone, Share2, Radio } from 'lucide-react';
+import { ChevronRight, Headphones, Battery, Bluetooth, Mic, Zap, Layers, Feather, Wind, CircleDot, Smartphone, Share2, Radio } from 'lucide-react';
 
 const PRODUCTS = [
   {
@@ -346,37 +347,7 @@ const AirpodsMax: React.FC = () => {
       {/* Hero Section */}
       <div className="relative h-screen w-full overflow-hidden bg-white">
         {/* Navbar */}
-        <nav className="absolute top-0 left-0 right-0 z-50 px-8 py-4 flex items-center justify-between text-zinc-900 text-xs">
-          <div className="flex items-center gap-8 w-full">
-            <div className="flex items-center gap-4 cursor-pointer group">
-              <img
-                src="/images/apple.svg"
-                alt="Apple"
-                className="w-4 h-4 opacity-80 group-hover:opacity-100 transition-opacity invert"
-              />
-              <span className="text-zinc-900/30 font-light text-xs group-hover:text-zinc-900/60 transition-colors">|</span>
-              <span className="text-zinc-900/70 font-semibold tracking-widest text-[11px] uppercase group-hover:text-zinc-900 transition-colors">Chai's Studio</span>
-            </div>
-            <div className="hidden md:flex flex-1 justify-center gap-8 font-medium tracking-wide opacity-80">
-              <a href="#" className="hover:opacity-100 transition-opacity">Store</a>
-              <a href="#" className="hover:opacity-100 transition-opacity">Mac</a>
-              <a href="#" className="hover:opacity-100 transition-opacity">iPad</a>
-              <Link to="/iphone" className="hover:opacity-100 transition-opacity">iPhone</Link>
-              <a href="#" className="hover:opacity-100 transition-opacity">Watch</a>
-              <a href="#" className="hover:opacity-100 transition-opacity">Vision</a>
-              <Link to="/" className="hover:opacity-100 transition-opacity text-zinc-900/100 drop-shadow-md">AirPods</Link>
-              <a href="#" className="hover:opacity-100 transition-opacity">TV & Home</a>
-              <a href="#" className="hover:opacity-100 transition-opacity">Entertainment</a>
-              <a href="#" className="hover:opacity-100 transition-opacity">Accessories</a>
-              <a href="#" className="hover:opacity-100 transition-opacity">Support</a>
-            </div>
-          </div>
-          <div className="flex items-center gap-6 ml-8">
-            <Search className="w-4 h-4 cursor-pointer opacity-80 hover:opacity-100" />
-            <ShoppingBag className="w-4 h-4 cursor-pointer opacity-80 hover:opacity-100" />
-            <Menu className="w-4 h-4 cursor-pointer md:hidden opacity-80 hover:opacity-100" />
-          </div>
-        </nav>
+        <Navbar theme="light" activePage="airpods" />
 
         {/* Main Showcase Panels */}
         <div className="flex h-full w-full">
