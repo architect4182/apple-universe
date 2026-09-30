@@ -350,9 +350,9 @@ const AirpodsMax: React.FC = () => {
           <div className="flex items-center gap-8 w-full">
             <div className="flex items-center gap-4 cursor-pointer group">
               <img
-                src="/images/apple.svg" className="invert" className="invert" className="invert"
+                src="/images/apple.svg"
                 alt="Apple"
-                className="w-4 h-4 opacity-80 group-hover:opacity-100 transition-opacity invert invert invert"
+                className="w-4 h-4 opacity-80 group-hover:opacity-100 transition-opacity invert"
               />
               <span className="text-zinc-900/30 font-light text-xs group-hover:text-zinc-900/60 transition-colors">|</span>
               <span className="text-zinc-900/70 font-semibold tracking-widest text-[11px] uppercase group-hover:text-zinc-900 transition-colors">Chai's Studio</span>
