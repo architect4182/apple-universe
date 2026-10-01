@@ -1,8 +1,7 @@
 import React, { useRef, useState } from 'react';
-import { Link } from 'react-router-dom';
 import { Navbar } from '../../components/Navbar';
 import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
-import { Shield, Cpu, Orbit, Camera, Focus, Target, ChevronRight, Sparkles, Battery, Zap, Play } from 'lucide-react';
+import { Shield, ChevronRight } from 'lucide-react';
 
 const IPHONE_PRODUCTS = [
   {

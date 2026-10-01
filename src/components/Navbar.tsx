@@ -4,17 +4,17 @@ import { Search, ShoppingBag } from 'lucide-react';
 
 export interface NavbarProps {
   theme?: 'dark' | 'light';
-  activePage?: 'mac' | 'ipad' | 'iphone' | 'watch' | 'vision' | 'airpods' | 'tv' | 'entertainment' | 'accessories';
+  activePage?: 'store' | 'mac' | 'ipad' | 'iphone' | 'watch' | 'vision' | 'airpods' | 'tv' | 'entertainment' | 'accessories';
 }
 
 export const Navbar: React.FC<NavbarProps> = ({ theme = 'dark', activePage }) => {
   const isDark = theme === 'dark';
-  
+
   // Theme-based classes
   const textClass = isDark ? 'text-white' : 'text-zinc-900';
   const mutedTextClass = isDark ? 'text-white/30' : 'text-zinc-900/30';
   const logoInvertClass = isDark ? '' : 'invert';
-  
+
   // Helper for active link styling
   const getLinkClass = (pageName: string) => {
     const isActive = activePage === pageName;
@@ -37,13 +37,13 @@ export const Navbar: React.FC<NavbarProps> = ({ theme = 'dark', activePage }) =>
           <span className={`opacity-70 font-semibold tracking-widest text-[11px] uppercase group-hover:opacity-100 transition-colors`}>Chai's Studio</span>
         </div>
         <div className="hidden md:flex flex-1 justify-center gap-8 font-medium tracking-wide opacity-80">
-          <a href="#" className="hover:opacity-100 transition-opacity">Store</a>
+          <Link to="/" onClick={() => window.scrollTo(0,0)} className={getLinkClass('store')}>Store</Link>
           <a href="#" className="hover:opacity-100 transition-opacity">Mac</a>
           <a href="#" className="hover:opacity-100 transition-opacity">iPad</a>
-          <Link to="/iphone" className={getLinkClass('iphone')}>iPhone</Link>
+          <Link to="/iphone" onClick={() => window.scrollTo(0,0)} className={getLinkClass('iphone')}>iPhone</Link>
           <a href="#" className="hover:opacity-100 transition-opacity">Watch</a>
           <a href="#" className="hover:opacity-100 transition-opacity">Vision</a>
-          <Link to="/" className={getLinkClass('airpods')}>AirPods</Link>
+          <Link to="/airpods" onClick={() => window.scrollTo(0,0)} className={getLinkClass('airpods')}>AirPods</Link>
           <a href="#" className="hover:opacity-100 transition-opacity">TV & Home</a>
           <a href="#" className="hover:opacity-100 transition-opacity">Entertainment</a>
           <a href="#" className="hover:opacity-100 transition-opacity">Accessories</a>
